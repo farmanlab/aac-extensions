@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'maven'
+
+def repo = new File(rootDir, "repository")
+def version = "1.0.0"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName version
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:${ktx_support}"
+    implementation 'androidx.core:core-ktx:1.1.0-alpha05'
+
+    implementation "androidx.appcompat:appcompat:${ktx_support}"
+    implementation "androidx.fragment:fragment-ktx:${ktx_support}"
+    implementation "androidx.recyclerview:recyclerview:${ktx_support}"
+
+    // aac
+    implementation "androidx.lifecycle:lifecycle-extensions:${life_cycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${life_cycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata:${life_cycle}"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository url: "file://${repo.absolutePath}"
+            pom.version = version             // version
+            pom.groupId = 'com.farmanlab'    // グループ名
+            pom.artifactId = 'aac-extensions' // ライブラリ名
+        }
+    }
+}
