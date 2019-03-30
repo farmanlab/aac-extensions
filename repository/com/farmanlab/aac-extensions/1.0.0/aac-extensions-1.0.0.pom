@@ -55,5 +55,11 @@
       <version>2.1.0-alpha02</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.hadilq.liveevent</groupId>
+      <artifactId>liveevent</artifactId>
+      <version>1.0.1</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 </project>
