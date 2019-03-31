@@ -6,6 +6,7 @@ buildscript {
         life_cycle = '2.1.0-alpha02'
         ktx_support = '1.1.0-alpha03'
         live_event = '1.0.1'
+        livedata_ktx = '3.0.0'
     }
     repositories {
         google()

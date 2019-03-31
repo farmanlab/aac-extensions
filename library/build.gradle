@@ -43,7 +43,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${ktx_support}"
     implementation 'androidx.core:core-ktx:1.1.0-alpha05'
 
-    implementation "androidx.appcompat:appcompat:${ktx_support}"
     implementation "androidx.fragment:fragment-ktx:${ktx_support}"
     implementation "androidx.recyclerview:recyclerview:${ktx_support}"
 
@@ -51,6 +50,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:${life_cycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${life_cycle}"
     implementation "androidx.lifecycle:lifecycle-livedata:${life_cycle}"
+
+    implementation "com.shopify:livedata-ktx:${livedata_ktx}"
 
     // external library
     implementation "com.github.hadilq.liveevent:liveevent:$live_event"
