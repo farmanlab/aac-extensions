@@ -56,6 +56,12 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>com.shopify</groupId>
+      <artifactId>livedata-ktx</artifactId>
+      <version>3.0.0</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>com.github.hadilq.liveevent</groupId>
       <artifactId>liveevent</artifactId>
       <version>1.0.1</version>
