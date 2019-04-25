@@ -25,4 +25,6 @@ fun <T> MutableLiveData<T>.setValueIfNew(newValue: T) {
 fun <T> MutableLiveData<T>.postValueIfNew(newValue: T) {
     if (this.value != newValue) postValue(newValue)
 }
+
+fun <T : Any> androidx.lifecycle.MutableLiveData<T>.requireValue(): T = checkNotNull(value)
 // endregion
